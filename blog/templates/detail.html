@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cat Species Showcase</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="{% static 'blog/detail.css' %}">
+</head>
+<body>
+  <section class="intro-section">
+    <div class="text-section">
+      <h1>{{ post.title }}</h1>
+      <p>
+        {{ post.content }}
+      </p>
+    </div>
+    <a href="{% url 'blog:index' %}" class="back-button">← Back</a>
+    <div class="model-section">
+      <model-viewer 
+        src="/media/cats/{{ post.image_3d }}" 
+        alt="A 3D cat" 
+        auto-rotate 
+        camera-controls 
+        disable-zoom 
+        shadow-intensity="1"
+        style="width: 400px; height: 400px;">
+      </model-viewer>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <script> 
+
+        window.addEventListener("scroll", () => {
+      const landing = document.querySelector(".landing");
+      const scrollY = window.scrollY;
+
+      // You can animate paw or text based on scroll
+      if (scrollY > 50) {
+        landing.style.opacity = "0.7";
+      } else {
+        landing.style.opacity = "1";
+      }
+    });
+
+</script>
+</body>
+</html>

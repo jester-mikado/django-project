@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cat Showcase</title>
+  <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <!-- Page 1 -->
+  <section class="page page1">
+    <img src="/media/cats/front.logo.png" alt="Bengal Cat" />
+    <h1 class="site-name">Purrfect Cats</h1>
+  </section>
+
+  <!-- Page 2 -->
+  <section class="page page2">
+    <h2 class="gallery-heading">Meet Our Cats</h2>
+    <div class="gallery">
+      {% for post in posts %}
+      <a href="{% url 'blog:details' post_id=post.id %}" class="cat-box">
+        <!-- <img src="images/cat1.jpg" alt="Cat 1" /> -->
+         <!-- <img src="{{ MEDIA_URL }}bengal_cat.cat4.png" /> -->
+        <img src="/media/cats/{{ post.img_urls }}" alt="Post image">
+        <span class="cat-name">{{post.title}}</span>
+      </a>
+      {% endfor %}
+      <!-- <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a>
+      <a href="#" class="cat-box">
+        <img src="images/cat2.jpg" alt="Cat 2" />
+        <span class="cat-name">Mittens</span>
+      </a> -->
+      <!-- Add more as needed -->
+    </div>
+  </section>
+  <!-- Page 3 -->
+  <!-- <section class="page page3">
+    <div class="detail-container">
+      <div class="cat-info">
+        <h2>Whiskers</h2>
+        <p>A playful cat with a love for naps and yarn.</p>
+      </div>
+      <model-viewer src="cat.glb" alt="3D Cat" auto-rotate camera-controls disable-zoom style="width: 300px; height: 300px;"></model-viewer>
+    </div>
+  </section> -->
+
+  <script>
+
+        window.addEventListener('scroll', () => {
+    const page1 = document.querySelector('.page1');
+    if (window.scrollY > 1000) {
+        page1.style.position = 'absolute';
+    } else {
+        page1.style.position = 'fixed';
+    }
+    });
+
+  </script>
+</body>
+</html>

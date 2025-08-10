@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+*{
+  cursor: url('../blog/cats/paw-pointer3.png'), auto !important;
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Segoe UI', sans-serif; */
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.text-section {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.text-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.model-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-section {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+
+  model-viewer {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+ .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      /* cursor: pointer; */
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #222;
+    }
