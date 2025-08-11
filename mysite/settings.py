@@ -75,14 +75,15 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'ENGINE': 'django.db.backends.mysql',
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'jestermikado$default',
         'USER': 'jestermikado',
         'PASSWORD': 'djangoData@13',
         'HOST': 'jestermikado.mysql.pythonanywhere-services.com',
         'PORT': '3306',
     }
-
+}
 
 
 # Password validation
@@ -121,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    "/blog/static/blog/"
+    os.path.join(BASE_DIR, 'blog', 'static', 'blog'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 # import os
